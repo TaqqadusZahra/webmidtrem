@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  myapp-dev:
+    image: nginx:latest
+    container_name: myapp-dev
+    ports:
+      - "8080:80"
+    volumes:
+      - ./deve:/usr/share/nginx/html
+    networks:
+      - myapp-net
+
+  myapp-prod:
+    image: nginx:latest
+    container_name: myapp-prod
+    ports:
+      - "80:80"
+    volumes:
+      - ./prod:/usr/share/nginx/html
+    networks:
+      - myapp-net
+
+networks:
+  myapp-net:
+    driver: bridge
