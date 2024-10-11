@@ -4,7 +4,7 @@ services:
     image: nginx:latest
     container_name: myapp-dev
     ports:
-      - "8080:80"
+      - "8081:80"
     volumes:
       - ./deve:/usr/share/nginx/html
     networks:
@@ -14,7 +14,7 @@ services:
     image: nginx:latest
     container_name: myapp-prod
     ports:
-      - "80:80"
+      - "8082:80"
     volumes:
       - ./prod:/usr/share/nginx/html
     networks:
